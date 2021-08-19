@@ -1,0 +1,71 @@
+#======================================#
+# Cherry-BungeeCord      ©2019-2021 Wany
+#                 https://cherry.wany.io
+#======================================#
+
+# 체리-번지코드 플러그인 설정 파일입니다.
+
+
+
+channel: "cherry:channel"
+debug: true
+wanyfield: true
+
+hub:
+  enable: true
+  server: "wanyfield"
+  message:
+    connect: "#D2B0DD;메인 서버로 이동합니다..."
+    already: "&c이미 메인 서버에 접속한 상태입니다"
+
+ban:
+  enable: true
+  default:
+    reason: "서버 접속 제한 조치"
+
+proxy:
+  enable: true
+  vhosts:
+
+    MC,WANY,IO;25565:
+      server:
+        - "wanyfield"
+        - "playground"
+        - "lounge"
+      ping:
+        protocol:
+          name: "{isonline:[wanyfield|playground]:[wanyfield|playground|&coffline]}"
+          version: "{isonline:[wanyfield|playground]:[{default}|{default}|10000]}"
+        players:
+          - "wanyfield"
+          - "playground"
+        description: "{isonline:[wanyfield|playground]:[#ffcc00;&m #fdcb09;&m #fbca12;&m #fac91b;&m #f8c823;&m #f6c62c;&m #f4c535;&m #f2c43e;&m #f1c347;&m #efc250;&m #edc158;&m #ebc061;&m #e9bf6a;&m #e8bd73;&m #e6bc7c;&m #e4bb85;&m #e2ba8d;&m #e0b996;&m #dfb89f;&m #ddb7a8;&m #dbb6b1;&m #d9b4ba;&m #d7b3c2;&m #d6b2cb;&m #d4b1d4;&m #d2b0dd;&m #d2b0dd;&o wanyfield #d2b0dd;&m #d4b1d4;&m #d6b2cb;&m #d7b3c2;&m #d9b4ba;&m #dbb6b1;&m #ddb7a8;&m #dfb89f;&m #e0b996;&m #e2ba8d;&m #e4bb85;&m #e6bc7c;&m #e8bd73;&m #e9bf6a;&m #ebc061;&m #edc158;&m #efc250;&m #f1c347;&m #f2c43e;&m #f4c535;&m #f6c62c;&m #f8c823;&m #fac91b;&m #fbca12;&m #fdcb09;&m #ffcc00;&m  |#ffcc00;&m #fdcb09;&m #fbca12;&m #fac91b;&m #f8c823;&m #f6c62c;&m #f4c535;&m #f2c43e;&m #f1c347;&m #efc250;&m #edc158;&m #ebc061;&m #e9bf6a;&m #e8bd73;&m #e6bc7c;&m #e4bb85;&m #e2ba8d;&m #e0b996;&m #dfb89f;&m #ddb7a8;&m #dbb6b1;&m #d9b4ba;&m #d7b3c2;&m #d6b2cb;&m #d4b1d4;&m #d2b0dd;&m #d2b0dd;&o wanyfield #d2b0dd;&m #d4b1d4;&m #d6b2cb;&m #d7b3c2;&m #d9b4ba;&m #dbb6b1;&m #ddb7a8;&m #dfb89f;&m #e0b996;&m #e2ba8d;&m #e4bb85;&m #e6bc7c;&m #e8bd73;&m #e9bf6a;&m #ebc061;&m #edc158;&m #efc250;&m #f1c347;&m #f2c43e;&m #f4c535;&m #f6c62c;&m #f8c823;&m #fac91b;&m #fbca12;&m #fdcb09;&m #ffcc00;&m  &7&oonly playground available|#8f8f8f;&m #919191;&m #949494;&m #969696;&m #999999;&m #9b9b9b;&m #9e9e9e;&m #a0a0a0;&m #a3a3a3;&m #a5a5a5;&m #a8a8a8;&m #aaaaaa;&m #adadad;&m #afafaf;&m #b2b2b2;&m #b4b4b4;&m #b7b7b7;&m #b9b9b9;&m #bcbcbc;&m #bebebe;&m #c1c1c1;&m #c3c3c3;&m #c6c6c6;&m #c8c8c8;&m #cbcbcb;&m #cdcdcd;&m #cdcdcd;&o wanyfield #cdcdcd;&m #cbcbcb;&m #c8c8c8;&m #c6c6c6;&m #c3c3c3;&m #c1c1c1;&m #bebebe;&m #bcbcbc;&m #b9b9b9;&m #b7b7b7;&m #b4b4b4;&m #b2b2b2;&m #afafaf;&m #adadad;&m #aaaaaa;&m #a8a8a8;&m #a5a5a5;&m #a3a3a3;&m #a0a0a0;&m #9e9e9e;&m #9b9b9b;&m #999999;&m #969696;&m #949494;&m #919191;&m #8f8f8f;&m  ]}"
+        icon: "{isonline:[wanyfield|playground]:[{file:plugins/Cherry-BungeeCord/icon/wanyfield-bomb.png}|{file:plugins/Cherry-BungeeCord/icon/wanyfield-bomb.png}|{file:plugins/Cherry-BungeeCord/icon/wanyfield-bomb-offline.png}]}"
+
+    MOD,WANY,IO;25565:
+      server:
+        - "modfield"
+      ping:
+        protocol:
+          name: "{isonline:modfield:[modfield|&coffline]}"
+          version: "{isonline:modfield:[{default}|10000]}"
+        players:
+          - "modfield"
+        description: "{isonline:modfield:[#ffcc00;&m  #fdcb09;&m #fbca12;&m #fac91b;&m #f8c823;&m #f6c62c;&m #f4c535;&m #f2c43e;&m #f1c347;&m #efc250;&m #edc158;&m #ebc061;&m #e9bf6a;&m #e8bd73;&m #e6bc7c;&m #e4bb85;&m #e2ba8d;&m #e0b996;&m #dfb89f;&m #ddb7a8;&m #dbb6b1;&m #d9b4ba;&m #d7b3c2;&m #d6b2cb;&m #d4b1d4;&m #d2b0dd;&m #d2b0dd;&o modfield #d2b0dd;&m #d4b1d4;&m #d6b2cb;&m #d7b3c2;&m #d9b4ba;&m #dbb6b1;&m #ddb7a8;&m #dfb89f;&m #e0b996;&m #e2ba8d;&m #e4bb85;&m #e6bc7c;&m #e8bd73;&m #e9bf6a;&m #ebc061;&m #edc158;&m #efc250;&m #f1c347;&m #f2c43e;&m #f4c535;&m #f6c62c;&m #f8c823;&m #fac91b;&m #fbca12;&m #fdcb09;&m #ffcc00;&m  |#8f8f8f;&m  #919191;&m #949494;&m #969696;&m #999999;&m #9b9b9b;&m #9e9e9e;&m #a0a0a0;&m #a3a3a3;&m #a5a5a5;&m #a8a8a8;&m #aaaaaa;&m #adadad;&m #afafaf;&m #b2b2b2;&m #b4b4b4;&m #b7b7b7;&m #b9b9b9;&m #bcbcbc;&m #bebebe;&m #c1c1c1;&m #c3c3c3;&m #c6c6c6;&m #c8c8c8;&m #cbcbcb;&m #cdcdcd;&m #cdcdcd;&o modfield #cdcdcd;&m #cbcbcb;&m #c8c8c8;&m #c6c6c6;&m #c3c3c3;&m #c1c1c1;&m #bebebe;&m #bcbcbc;&m #b9b9b9;&m #b7b7b7;&m #b4b4b4;&m #b2b2b2;&m #afafaf;&m #adadad;&m #aaaaaa;&m #a8a8a8;&m #a5a5a5;&m #a3a3a3;&m #a0a0a0;&m #9e9e9e;&m #9b9b9b;&m #999999;&m #969696;&m #949494;&m #919191;&m #8f8f8f;&m  ]}"
+        icon: "{isonline:modfield:[{file:plugins/Cherry-BungeeCord/icon/wanyfield-bomb.png}|{file:plugins/Cherry-BungeeCord/icon/wanyfield-bomb-offline.png}]}"
+
+    MUSHROOM24,KRO,KR;25565:
+      server:
+        - "rcmr"
+        - "rcmr2"
+        - "wanyfield"
+      ping:
+        protocol:
+          name: "{isonline:[rcmr|rcmr2]:[rcmr|rcmr2|&coffline]}"
+          version: "{isonline:[rcmr|rcmr2]:[{default}|{default}|10000]}"
+        players:
+          - "rcmr"
+          - "rcmr2"
+        description: "#e3640b;&m #e46a0b;&m #e5700a;&m #e6750a;&m #e77b09;&m #e88109;&m #e98708;&m #ea8d08;&m #eb9307;&m #ec9807;&m #ed9e06;&m #efa406;&m #f0aa05;&m #f1b005;&m #f2b504;&m #f3bb04;&m #f4c103;&m #f5c703;&m #f6cd02;&m #f7d302;&m #f8d801;&m #f9de01;&m #fae400;&m #fae400;&o racoonground #fae400;&m #f9de01;&m #f8d801;&m #f7d302;&m #f6cd02;&m #f5c703;&m #f4c103;&m #f3bb04;&m #f2b504;&m #f1b005;&m #f0aa05;&m #efa406;&m #ed9e06;&m #ec9807;&m #eb9307;&m #ea8d07;&m #e98708;&m #e88109;&m #e77b09;&m #e6750a;&m #e5700a;&m #e46a0b;&m #e3640b;&m &r
+{isonline:[rcmr|rcmr2]:[|&6&o                          서바이벌 모드|]}"
+        icon: "{isonline:[rcmr|rcmr2]:[{file:plugins/Cherry-BungeeCord/icon/rcmr.png}|{file:plugins/Cherry-BungeeCord/icon/rcmr.png}|{file:plugins/Cherry-BungeeCord/icon/rcmr-offline.png}]}"

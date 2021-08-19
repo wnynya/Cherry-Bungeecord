@@ -1,0 +1,4 @@
+name: Cherry-BungeeCord
+version: 1.17-dev
+main: io.wany.cherry.bungeecord.Cherry
+author: Wany
