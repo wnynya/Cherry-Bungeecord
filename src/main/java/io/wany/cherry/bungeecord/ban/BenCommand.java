@@ -36,8 +36,13 @@ public class BenCommand extends Command implements TabExecutor {
 
     target = ProxyServer.getInstance().getPlayer(targetName);
     if (target == null) {
-      UUID uuid = UUID.fromString(targetName);
-      target = ProxyServer.getInstance().getPlayer(uuid);
+      try {
+        UUID uuid = UUID.fromString(targetName);
+        target = ProxyServer.getInstance().getPlayer(uuid);
+      } catch (Exception e) {
+        Message.info(commandSender, Ban.PREFIX + "플레이어를 찾을 수 없습니다");
+        return;
+      }
     }
     if (target == null) {
       Message.info(commandSender, Ban.PREFIX + "플레이어를 찾을 수 없습니다");
