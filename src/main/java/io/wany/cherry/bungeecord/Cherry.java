@@ -3,6 +3,7 @@ package io.wany.cherry.bungeecord;
 import io.wany.cherry.bungeecord.amethyst.ServerData;
 import io.wany.cherry.bungeecord.amethyst.ServerDataEmitter;
 import io.wany.cherry.bungeecord.ban.Ban;
+import io.wany.cherry.bungeecord.command.CherryCommand;
 import io.wany.cherry.bungeecord.command.CmdGotoHub;
 import io.wany.cherry.bungeecord.command.CmdSwap;
 import io.wany.cherry.bungeecord.event.*;
@@ -33,6 +34,8 @@ public class Cherry extends Plugin {
 
     Proxy.onEnable();
     Ban.onEnable();
+
+    getProxy().getPluginManager().registerCommand(this, new CherryCommand());
 
     getProxy().getPluginManager().registerListener(this, new PlayerDisconnect());
     getProxy().getPluginManager().registerListener(this, new ProxyPing());

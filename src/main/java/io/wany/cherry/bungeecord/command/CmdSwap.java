@@ -17,7 +17,7 @@ import java.util.List;
 public class CmdSwap extends Command implements TabExecutor {
 
   public CmdSwap() {
-    super("gswap", "cherry.bungeecord.swap");
+    super("bswap", "cherry.bungeecord.swap", "gswap");
   }
 
   @Override

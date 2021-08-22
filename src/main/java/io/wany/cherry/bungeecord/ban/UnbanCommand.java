@@ -10,9 +10,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class CmdUnban extends Command implements TabExecutor {
+public class UnbanCommand extends Command implements TabExecutor {
 
-  public CmdUnban() {
+  public UnbanCommand() {
     super("unbban", "cherry.bungeecord.ban", "gunban");
   }
 

@@ -115,9 +115,10 @@ public class Ban {
       return;
     }
 
-    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new CmdBan());
-    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new CmdUnban());
-    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new CmdBanlist());
+    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new BanCommand());
+    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new UnbanCommand());
+    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new BanlistCommand());
+    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new BenCommand());
 
     file = new File(Cherry.PLUGIN.getDataFolder().getAbsoluteFile().getParentFile().getParentFile() + "/banned-players.json");
     if (!file.exists()) {

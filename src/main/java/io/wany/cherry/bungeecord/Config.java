@@ -89,6 +89,10 @@ public class Config {
     return config.getList(path);
   }
 
+  public void update() {
+    this.config = loadConfig();
+  }
+
   public static Config get(String name) {
     if (configs.containsKey(name)) {
       return configs.get(name);

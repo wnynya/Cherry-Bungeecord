@@ -4,9 +4,9 @@ import io.wany.cherry.bungeecord.Message;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
 
-public class CmdBanlist extends Command {
+public class BanlistCommand extends Command {
 
-  public CmdBanlist() {
+  public BanlistCommand() {
     super("bbanlist", "cherry.bungeecord.ban", "gbanlist");
   }
 

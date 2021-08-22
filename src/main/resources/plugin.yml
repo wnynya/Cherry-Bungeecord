@@ -1,4 +1,7 @@
 name: Cherry-BungeeCord
-version: 1.17-dev
+version: 1.17-12
 main: io.wany.cherry.bungeecord.Cherry
+
+description: A Bungeecord plugin
 author: Wany
+website: https://cherry.wany.io

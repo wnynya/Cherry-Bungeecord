@@ -1,12 +1,10 @@
 package io.wany.cherry.bungeecord.proxy;
 
-import com.google.common.io.ByteArrayDataOutput;
-import com.google.common.io.ByteStreams;
 import io.wany.cherry.bungeecord.Cherry;
 import io.wany.cherry.bungeecord.Console;
 import io.wany.cherry.bungeecord.Message;
-import io.wany.cherry.bungeecord.MessagingChannel;
 import io.wany.cherry.bungeecord.amethyst.ServerData;
+import io.wany.cherry.bungeecord.event.ProxyPing;
 import net.md_5.bungee.api.Favicon;
 import net.md_5.bungee.api.ServerPing;
 import net.md_5.bungee.api.chat.BaseComponent;
@@ -39,6 +37,7 @@ public class Proxy {
   public String port;
   public List<String> servers;
   public ProxyPing proxyPing;
+  public String srv = null;
 
   public Proxy(String host, String port, List<String> servers, ProxyPing proxyPing) {
     this.host = host;
@@ -46,7 +45,6 @@ public class Proxy {
     this.servers = servers;
     this.proxyPing = proxyPing;
   }
-
 
   public static class ProxyPing {
     public String protocolName;
@@ -346,6 +344,45 @@ public class Proxy {
       String icon = section.getString("ping.icon");
       ProxyPing serverPing = new ProxyPing(protocolName, protocolVersion, playersServer, description, icon);
       Proxy proxy = new Proxy(host, port, server, serverPing);
+      proxy.srv = section.getString("srv");
+      proxies.put(hostname, proxy);
+    }
+
+    Cherry.PLUGIN.getProxy().getPluginManager().registerCommand(Cherry.PLUGIN, new ProxyCommand());
+
+  }
+
+  public static void onReload() {
+
+    if (!ENABLED) {
+      return;
+    }
+
+    proxies.clear();
+
+    for (String hostname : Cherry.CONFIG.getConfig().getSection("proxy.vhosts").getKeys()) {
+      Configuration section = Cherry.CONFIG.getConfig().getSection("proxy.vhosts." + hostname);
+      hostname = hostname.replaceAll(",", ".").replaceAll(";", ":");
+      String host;
+      String port;
+      Pattern hostnamePattern = Pattern.compile("(.*):([0-9]{1,5})");
+      Matcher hostnameMatcher = hostnamePattern.matcher(hostname);
+      if (hostnameMatcher.find()) {
+        host = hostnameMatcher.group(1);
+        port = hostnameMatcher.group(2);
+      } else {
+        continue;
+      }
+      Console.log(PREFIX + "Add vhost: " + COLOR + hostname);
+      List<String> server = section.getStringList("server");
+      String protocolName = section.getString("ping.protocol.name");
+      String protocolVersion = section.getString("ping.protocol.version");
+      List<String> playersServer = section.getStringList("ping.players");
+      String description = section.getString("ping.description");
+      String icon = section.getString("ping.icon");
+      ProxyPing serverPing = new ProxyPing(protocolName, protocolVersion, playersServer, description, icon);
+      Proxy proxy = new Proxy(host, port, server, serverPing);
+      proxy.srv = section.getString("srv");
       proxies.put(hostname, proxy);
     }
 

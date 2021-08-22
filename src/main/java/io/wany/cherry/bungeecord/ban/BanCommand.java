@@ -17,9 +17,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.*;
 
-public class CmdBan extends Command implements TabExecutor {
+public class BanCommand extends Command implements TabExecutor {
 
-  public CmdBan() {
+  public BanCommand() {
     super("bban", "cherry.bungeecord.ban", "gban");
   }
 
